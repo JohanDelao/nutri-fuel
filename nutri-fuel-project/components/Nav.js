@@ -12,7 +12,7 @@ export default function Nav() {
 
   return (
     <nav className="h-32 flex shadow-lg mb-10 w-full">
-      <div className="md:w-9/12 md:justify-between mx-auto flex w-96 justify-around">
+      <div className="md:w-9/12 md:justify-between md:mx-auto w-full flex justify-around 2xl:w-5/12">
         <div className="flex h-full items-center md:w-72 justify-between w-64">
           <Image src={Logo} className="h-20 w-20" />
           <p className="font-poppins md:text-4xl text-green-300 font-bold h-fit text-3xl">
