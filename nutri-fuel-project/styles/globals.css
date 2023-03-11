@@ -8,6 +8,9 @@ body {
   overflow-x: hidden;
 }
 
+html{
+  overflow-x: initial !important;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
