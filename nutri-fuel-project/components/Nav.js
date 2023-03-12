@@ -1,7 +1,7 @@
 import Logo from "../public/NutrimeterLogo5.png";
 import Image from "next/image";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,14 +15,20 @@ export default function Nav() {
       <div className="md:w-9/12 md:justify-between md:mx-auto w-full flex justify-around 2xl:w-5/12">
         <div className="flex h-full items-center md:w-72 justify-between w-64">
           <Image src={Logo} className="h-20 w-20" />
-          <p className="font-poppins md:text-4xl text-green-300 font-bold h-fit text-3xl">
-            NutriMeter
-          </p>
+          <Link href="/">
+            <p className="font-poppins md:text-4xl text-green-300 font-bold h-fit text-3xl">
+              NutriMeter
+            </p>
+          </Link>
         </div>
         <div className="md:flex text-green-300 text-lg items-center w-40 justify-between h-full hidden">
-          <p className="h-fit">Log In</p>
+          <Link href="/auth/login">
+            <p className="h-fit">Log In</p>
+          </Link>
           <p className="md:flex hidden">|</p>
-          <p className="h-fit">Sign Up</p>
+          <Link href="/signUp">
+            <p className="h-fit">Sign Up</p>
+          </Link>
         </div>
         <div className={`${menuOpen ? "block" : "hidden"} md:hidden bg-white w-28 h-fit text-green-300 shadow-lg absolute left-2/3 top-20 p-5`}>
             <p className="h-fit">Log In</p>
