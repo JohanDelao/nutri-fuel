@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,7 +11,7 @@ export default function Login() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(emailToCheck);
   }
-  function clearInputs(){
+  function clearInputs() {
     document.getElementById("emailInput").value = "";
     document.getElementById("passwordInput").value = "";
   }
@@ -21,7 +22,7 @@ export default function Login() {
         throw "Email is in incorrect format!";
       } else {
         toast.success("Successfully Logged In!");
-        clearInputs()
+        clearInputs();
       }
     } catch (err) {
       toast.error(err);
@@ -30,7 +31,8 @@ export default function Login() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-80 shadow-lg h-fit mt-14 md:mt-20 lg:h-2/5 lg:w-4/12 rounded-2xl py-6 pb-10">
+      {/* <div className="w-80 shadow-lg h-fit mt-14 md:mt-20 lg:h-2/5 xl:h-fit xl:w-fit lg:w-4/12 rounded-2xl xl:absolute xl:top-1/3 xl:mt-0 py-6 xl:px-10 pb-10"> */}
+      <div className="w-fit shadow-lg h-fit rounded-2xl absolute top-1/3 py-6 px-10 pb-10">
         <h2 className="font-poppins text-3xl font-semibold w-fit mx-auto mb-12">
           Member Login
         </h2>
@@ -63,6 +65,9 @@ export default function Login() {
           >
             LOGIN
           </button>
+        </div>
+        <div className="text-center mt-2">
+          <p>Don't have an account? <span className="text-blue-300 "><Link href={'/'}>Sign Up</Link></span>!</p>
         </div>
       </div>
       <ToastContainer

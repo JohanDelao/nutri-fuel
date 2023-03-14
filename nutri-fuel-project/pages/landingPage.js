@@ -37,7 +37,7 @@ export default function Landing() {
           </p>
         </div>
       </div>
-      <div className="flex justify-around md:flex-nowrap flex-wrap md:mt-14 mt-4 mb-10">
+      <div className="flex justify-around md:flex-nowrap flex-wrap md:mt-14 mt-4 mb-10 md:mx-auto md:w-11/12 lg:mx-0 lg:w-full">
         <div className="text-center mt-14 md:mt-0">
             <div className="flex items-center justify-center rounded-full h-36 w-36 shadow-xl mx-auto">
                 <Image src={Book}></Image>
