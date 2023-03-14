@@ -11,17 +11,17 @@ export default function Nav() {
   };
 
   return (
-    <nav className="h-32 flex shadow-lg mb-10 w-full">
-      <div className="md:w-9/12 md:justify-between md:mx-auto w-full flex justify-around 2xl:w-5/12">
-        <div className="flex h-full items-center md:w-72 justify-between w-64">
-          <Image src={Logo} className="h-20 w-20" />
+    <nav className="h-24 flex shadow-lg mb-10 w-full">
+      <div className="mx-4 md:mx-10 xl:mx-auto px-2 xl:w-9/12 md:justify-between w-full flex justify-between 2xl:w-5/12">
+        <div className="flex h-full items-center md:w-56 justify-between w-48">
+          <Image src={Logo} className="h-14 w-14" />
           <Link href="/">
-            <p className="font-poppins md:text-4xl text-green-300 font-bold h-fit text-3xl">
+            <p className="font-poppins md:text-3xl text-green-300 font-bold h-fit text-2xl">
               NutriMeter
             </p>
           </Link>
         </div>
-        <div className="md:flex text-green-300 text-lg items-center w-40 justify-between h-full hidden">
+        {/* <div className="md:flex text-green-300 text-lg items-center w-40 justify-between h-full hidden">
           <Link href="/auth/login">
             <p className="h-fit">Log In</p>
           </Link>
@@ -29,38 +29,11 @@ export default function Nav() {
           <Link href="/signUp">
             <p className="h-fit">Sign Up</p>
           </Link>
-        </div>
-        <div className={`${menuOpen ? "block" : "hidden"} md:hidden bg-white w-28 h-fit text-green-300 shadow-lg absolute left-2/3 top-20 p-5`}>
-            <p className="h-fit">Log In</p>
-            <p className="h-fit">Sign Up</p>
-        </div>
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={handleMenuToggle}
-            className="text-green-300 focus:outline-none"
-          >
-            <svg
-              className="h-6 w-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                className={`${menuOpen ? "hidden" : "inline-flex"}`}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-              <path
-                className={`${menuOpen ? "inline-flex" : "hidden"}`}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+        </div> */}
+        <div className="text-black text-lg w-24 items-center flex justify-end">
+          <Link href="/auth/login">
+              <p className="h-fit font-bold hover:text-green-300">Log In</p>
+            </Link>
         </div>
       </div>
     </nav>
