@@ -5,8 +5,8 @@ export default function Login(){
     const [password, setPassword] = useState("")
 
     return (
-        <div className="flex justify-center items-center">
-            <div className="w-80 shadow-lg h-fit mt-14 md:mt-20 md:h-2/5 md:w-4/12 rounded-2xl py-6 pb-10">
+        <div className="flex justify-center items-center h-full">
+            <div className="w-80 shadow-lg h-fit mt-14 md:mt-20 w-fit h-fit px-5 md:px-10 absolute top-1/4 rounded-2xl py-6 pb-10">
                 <h2 className="font-poppins text-3xl font-semibold w-fit mx-auto mb-12">Member Login</h2>
                 <div className="mx-auto w-fit">
                     <div className="mx-auto w-fit">
