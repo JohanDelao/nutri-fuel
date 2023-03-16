@@ -32,7 +32,7 @@ export default function Login() {
   return (
     <div className="flex justify-center items-center">
       {/* <div className="w-80 shadow-lg h-fit mt-14 md:mt-20 lg:h-2/5 xl:h-fit xl:w-fit lg:w-4/12 rounded-2xl xl:absolute xl:top-1/3 xl:mt-0 py-6 xl:px-10 pb-10"> */}
-      <div className="w-fit shadow-lg h-fit rounded-2xl absolute top-1/3 py-6 px-10 pb-10">
+      <div className="w-fit shadow-lg h-fit rounded-2xl absolute lg:top-1/4 xl:top-1/3 py-6 px-10 pb-10">
         <h2 className="font-poppins text-3xl font-semibold w-fit mx-auto mb-12">
           Member Login
         </h2>
