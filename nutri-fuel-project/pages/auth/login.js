@@ -67,7 +67,7 @@ export default function Login() {
           </button>
         </div>
         <div className="text-center mt-2">
-          <p>Don't have an account? <span className="text-blue-300 "><Link href={'/'}>Sign Up</Link></span>!</p>
+          <p>Don't have an account? <span className="text-blue-300 "><Link href={'/auth/signUp'}>Sign Up</Link></span>!</p>
         </div>
       </div>
       <ToastContainer

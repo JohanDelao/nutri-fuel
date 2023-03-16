@@ -21,15 +21,6 @@ export default function Nav() {
             </p>
           </Link>
         </div>
-        {/* <div className="md:flex text-green-300 text-lg items-center w-40 justify-between h-full hidden">
-          <Link href="/auth/login">
-            <p className="h-fit">Log In</p>
-          </Link>
-          <p className="md:flex hidden">|</p>
-          <Link href="/signUp">
-            <p className="h-fit">Sign Up</p>
-          </Link>
-        </div> */}
         <div className="text-black text-lg w-24 items-center flex justify-end">
           <Link href="/auth/login">
               <p className="h-fit font-bold hover:text-green-300">Log In</p>
