@@ -4,6 +4,26 @@ export default function SignUp() {
   const [flipped, setFlipped] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [age, setAge] = useState(0)
+
+  const goalOptions = ["Lose Weight", "Gain Weight", "Maintain Weight"];
+  const genderOptions = ["Male", "Female"];
+  const activityLevels = ["Sedentary", "Lightly Active", "Moderately Active", "Very Active"]
+
+  const [selectedGoalOption, setSelectedGoalOption] = useState(goalOptions[0]);
+  const [gender, setGender] = useState(genderOptions[0])
+  const [activityLevel, setActivityLevel] = useState(activityLevels[0])
+
+  const handleGoalOptionChange = (event) => {
+    setSelectedGoalOption(event.target.value);
+  };
+  const handleGenderOptionChange = (event) => {
+    setGender(event.target.value)
+  }
+  const handleActivityOptionChange = (event) => {
+    setActivityLevel(event.target.value)
+  }
 
   function flip() {
     setFlipped(!flipped);
@@ -20,63 +40,78 @@ export default function SignUp() {
           <form className="mx-auto w-full flex justify-around">
             <div className="w-fit px-auto flex-col flex justify-center">
               <input
-                id="emailInput"
-                placeholder="Email Address"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                id="nameInput"
+                required
+                placeholder="First Name"
                 className="lg:w-56 w-56 h-14 bg-transparent border-solid border-slate-200 border-2 rounded pl-2 mb-6"
               ></input>
-              <input
-                id="passwordInput"
-                autoComplete="current-password"
-                type="password"
-                placeholder="Password"
-                className="pl-2 h-14 lg:w-56 w-56 bg-transparent border-solid border-slate-200 border-2 rounded mb-6"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              ></input>
-              <input
-                id="passwordInput"
-                autoComplete="current-password"
-                type="password"
-                placeholder="Retype Password"
-                className="pl-2 h-14 lg:w-56 w-56 bg-transparent border-solid border-slate-200 border-2 rounded mb-6"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              ></input>
+              <select
+                id="dropdownGoal"
+                required
+                name="dropdownGoal"
+                onChange={handleGoalOptionChange}
+                className="lg:w-56 w-56 h-14 bg-transparent border-solid border-slate-200 border-2 rounded pl-2 mb-6"
+              >
+                {goalOptions.map((option) => {
+                  return (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  );
+                })}
+              </select>
+              <select
+                id="dropdownGender"
+                required
+                name="dropdownGender"
+                onChange={handleGenderOptionChange}
+                className="lg:w-56 w-56 h-14 bg-transparent border-solid border-slate-200 border-2 rounded pl-2 mb-6"
+              >
+                {genderOptions.map((option) => {
+                  return (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
             <div className="w-fit px-auto flex-col flex justify-center">
               <input
-                id="emailInput"
-                placeholder="Email Address"
+                id="weightInput"
+                required
+                placeholder="Weight (LBS)"
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setWeight(e.target.value);
                 }}
+                type="number"
                 className="lg:w-56 w-56 h-14 bg-transparent border-solid border-slate-200 border-2 rounded pl-2 mb-6"
               ></input>
               <input
-                id="passwordInput"
-                autoComplete="current-password"
-                type="password"
-                placeholder="Password"
+                id="ageInput"
+                required
+                type="number"
+                placeholder="Age"
                 className="pl-2 h-14 lg:w-56 w-56 bg-transparent border-solid border-slate-200 border-2 rounded mb-6"
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setAge(e.target.value);
                 }}
               ></input>
-              <input
-                id="passwordInput"
-                autoComplete="current-password"
-                type="password"
-                placeholder="Retype Password"
-                className="pl-2 h-14 lg:w-56 w-56 bg-transparent border-solid border-slate-200 border-2 rounded mb-6"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              ></input>
+              <select
+                id="dropdownActivity"
+                required
+                name="dropdownActivity"
+                onChange={handleActivityOptionChange}
+                className="lg:w-56 w-56 h-14 bg-transparent border-solid border-slate-200 border-2 rounded pl-2 mb-6"
+              >
+                {activityLevels.map((option) => {
+                  return (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
           </form>
         ) : (
@@ -84,6 +119,7 @@ export default function SignUp() {
             <input
               id="emailInput"
               placeholder="Email Address"
+              required
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -91,6 +127,7 @@ export default function SignUp() {
             ></input>
             <input
               id="passwordInput"
+              required
               autoComplete="current-password"
               type="password"
               placeholder="Password"
@@ -101,6 +138,7 @@ export default function SignUp() {
             ></input>
             <input
               id="passwordInput"
+              required
               autoComplete="current-password"
               type="password"
               placeholder="Retype Password"
@@ -112,19 +150,19 @@ export default function SignUp() {
           </form>
         )}
         <div className="flex justify-center mb-6">
-          <div className="flex w-10 justify-between">
+          <div className="flex w-8 justify-between">
             <div
               className={
                 !flipped
-                  ? "rounded-full h-4 w-4 bg-slate-300"
-                  : "rounded-full h-4 w-4 border-solid border-slate-300 border-2"
+                  ? "rounded-full h-3 w-3 bg-slate-300"
+                  : "rounded-full h-3 w-3 border-solid border-slate-300 border-2"
               }
             ></div>
             <div
               className={
                 !flipped
-                  ? "rounded-full h-4 w-4 border-solid border-slate-300 border-2"
-                  : "rounded-full h-4 w-4 bg-slate-300"
+                  ? "rounded-full h-3 w-3 border-solid border-slate-300 border-2"
+                  : "rounded-full h-3 w-3 bg-slate-300"
               }
             ></div>
           </div>
